@@ -56,8 +56,6 @@
   --s-48: 12rem;
 
   /* Layout */
-  --sidebar-w: 20%;
-  --main-w: 80%;
   --cart-w: 360px;
   --nav-h-mobile: 56px;
 
@@ -177,12 +175,14 @@ small {
   position: relative;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background: var(--c-black);
+  padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
 }
 
 .c-portal__bg {
@@ -201,10 +201,13 @@ small {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--s-8);
+  gap: var(--s-6);
   color: var(--c-white);
   text-align: center;
-  padding: var(--s-8);
+  padding: var(--s-6);
+  max-height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .c-portal__logo {
@@ -264,13 +267,30 @@ small {
   opacity: 1;
 }
 
-@media (max-width: 480px) {
+/* Short viewports (landscape phones, iPhone SE) */
+@media (max-height: 600px) {
+  .c-portal__content {
+    gap: var(--s-3);
+    padding: var(--s-4);
+  }
+
   .c-portal__link {
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
+    padding: var(--s-1) var(--s-3);
+    min-height: 36px;
   }
 
   .c-portal__logo {
     font-size: var(--text-2xl);
+    margin-bottom: var(--s-2);
+  }
+
+  .c-portal__nav {
+    gap: var(--s-2);
+  }
+
+  .c-portal__social {
+    margin-top: var(--s-3);
   }
 }
 
@@ -764,8 +784,8 @@ small {
 
 .c-product-page__gallery {
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: var(--nav-h-mobile);
+  height: calc(100vh - var(--nav-h-mobile));
   overflow: hidden;
   background: var(--c-off-white);
 }
