@@ -15,174 +15,39 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- Snipcart (test mode) -->
-  <link rel="preconnect" href="https://cdn.snipcart.com">
 </head>
 <body data-page="home">
 
-  <div class="site-shell">
+  <!-- ====== PORTAL — Full-screen gateway ====== -->
+  <div class="c-portal">
+    <!-- Background image/video — replace with Sante's centerpiece visual -->
+    <div class="c-portal__bg placeholder" style="opacity: 0.4;">[CENTERPIECE VISUAL FROM SURVEY]</div>
 
-    <!-- ====== SIDEBAR NAV (Desktop) ====== -->
-    <nav class="site-sidebar c-nav" aria-label="Main navigation">
-      <div>
-        <div class="site-sidebar__logo">
-          <a href="" aria-label="Sante Designs home">SANTE</a>
-        </div>
-        <ul class="c-nav__list">
-          <li><a href="archive.html" class="c-nav__link" data-nav="archive">archive</a></li>
-          <li><a href="lookbook.html" class="c-nav__link" data-nav="lookbook">lookbook</a></li>
-          <li><a href="story.html" class="c-nav__link" data-nav="story">our story</a></li>
-          <li><a href="sound.html" class="c-nav__link" data-nav="sound">sound</a></li>
-          <li><a href="drop.html" class="c-nav__link" data-nav="drop">drop</a></li>
-        </ul>
+    <div class="c-portal__content">
+      <!-- Logo -->
+      <div class="c-portal__logo">SANTE</div>
+
+      <!-- Navigation -->
+      <nav class="c-portal__nav" aria-label="Main navigation">
+        <a href="archive.html" class="c-portal__link">Shop</a>
+        <a href="lookbook.html" class="c-portal__link">Lookbook</a>
+        <a href="story.html" class="c-portal__link">Our Story</a>
+        <a href="sound.html" class="c-portal__link">Sound</a>
+        <a href="drop.html" class="c-portal__link">Drop</a>
+      </nav>
+
+      <!-- Social -->
+      <div class="c-portal__social">
+        <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="5"/>
+            <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
       </div>
-      <div class="c-nav__footer">
-        <button class="c-nav__cart-btn snipcart-checkout" aria-label="Open cart">
-          cart <span class="c-nav__cart-count snipcart-items-count">0</span>
-        </button>
-        <a href="https://instagram.com/" class="c-nav__instagram" target="_blank" rel="noopener">[SANTE'S INSTAGRAM]</a>
-      </div>
-    </nav>
-
-    <!-- ====== MOBILE HEADER ====== -->
-    <header class="site-header-mobile">
-      <a href="" class="site-header-mobile__logo" style="font-family: var(--f-display); font-size: var(--text-xl);">SANTE</a>
-      <div style="display: flex; align-items: center; gap: var(--s-4);">
-        <button class="c-nav__cart-btn snipcart-checkout" aria-label="Open cart">
-          cart <span class="c-nav__cart-count snipcart-items-count">0</span>
-        </button>
-        <button class="c-hamburger" data-menu-toggle aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </header>
-
-    <!-- ====== MAIN CONTENT ====== -->
-    <main class="site-main">
-
-      <!-- HERO -->
-      <section class="c-hero">
-        <!-- Replace with Sante's centerpiece visual -->
-        <div class="c-hero__media placeholder" style="font-size: var(--text-sm);">[HERO VIDEO / IMAGE]</div>
-        <div class="c-hero__content">
-          <h1 class="c-hero__title">SANTE</h1>
-          <p class="c-hero__sub">[HOOK PARAGRAPH FROM SURVEY]</p>
-        </div>
-      </section>
-
-      <!-- MARQUEE -->
-      <section class="c-marquee" aria-hidden="true">
-        <div class="c-marquee__track" data-marquee>
-          <span class="c-marquee__item">[SANTE DESIGNS]</span>
-          <span class="c-marquee__separator">&mdash;</span>
-          <span class="c-marquee__item c-marquee__item--accent">[TAGLINE]</span>
-          <span class="c-marquee__separator">&mdash;</span>
-          <span class="c-marquee__item">[SANTE DESIGNS]</span>
-          <span class="c-marquee__separator">&mdash;</span>
-          <span class="c-marquee__item c-marquee__item--accent">[TAGLINE]</span>
-          <span class="c-marquee__separator">&mdash;</span>
-        </div>
-      </section>
-
-      <!-- FEATURED COLLECTION -->
-      <section class="c-featured" data-animate="fade-up">
-        <div class="c-featured__header">
-          <p class="c-featured__label">latest</p>
-          <h2 class="c-featured__title">[Collection Name]</h2>
-        </div>
-        <div class="c-featured__grid">
-          <!-- Card 1 -->
-          <a href="product.html" class="c-product-card" data-animate="fade-up">
-            <div class="c-product-card__image-wrap placeholder">[PRODUCT IMAGE]</div>
-            <div class="c-product-card__info">
-              <p class="c-product-card__title">[Product Name]</p>
-              <p class="c-product-card__price">$[PRICE]</p>
-            </div>
-          </a>
-          <!-- Card 2 -->
-          <a href="product.html" class="c-product-card" data-animate="fade-up">
-            <div class="c-product-card__image-wrap placeholder">[PRODUCT IMAGE]</div>
-            <div class="c-product-card__info">
-              <p class="c-product-card__title">[Product Name]</p>
-              <p class="c-product-card__price">$[PRICE]</p>
-            </div>
-          </a>
-          <!-- Card 3 -->
-          <a href="product.html" class="c-product-card" data-animate="fade-up">
-            <div class="c-product-card__image-wrap placeholder">[PRODUCT IMAGE]</div>
-            <div class="c-product-card__info">
-              <p class="c-product-card__title">[Product Name]</p>
-              <p class="c-product-card__price">$[PRICE]</p>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <!-- EDITORIAL BLOCK -->
-      <section class="c-editorial" data-animate="fade-up">
-        <div class="c-editorial__image">
-          <div class="placeholder" style="width:100%;height:100%;">[EDITORIAL IMAGE]</div>
-        </div>
-        <div class="c-editorial__text">
-          <h3>[LORE MANIFESTO HEADLINE]</h3>
-          <p>[LORE MANIFESTO TEXT FROM SURVEY — 3-4 sentences about the soul and philosophy]</p>
-          <a href="story.html" class="c-btn c-btn--outline" style="margin-top: var(--s-4); align-self: flex-start;">Read the story</a>
-        </div>
-      </section>
-
-      <!-- SECOND MARQUEE -->
-      <section class="c-marquee" aria-hidden="true">
-        <div class="c-marquee__track" data-marquee data-marquee-reverse>
-          <span class="c-marquee__item">[SECONDARY TAGLINE]</span>
-          <span class="c-marquee__separator">&mdash;</span>
-          <span class="c-marquee__item">[SECONDARY TAGLINE]</span>
-          <span class="c-marquee__separator">&mdash;</span>
-          <span class="c-marquee__item">[SECONDARY TAGLINE]</span>
-          <span class="c-marquee__separator">&mdash;</span>
-          <span class="c-marquee__item">[SECONDARY TAGLINE]</span>
-          <span class="c-marquee__separator">&mdash;</span>
-        </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer class="c-footer">
-        <p class="c-footer__copy">&copy; 2026 Sante Designs. All rights reserved.</p>
-        <nav class="c-footer__links" aria-label="Footer navigation">
-          <a href="legal/terms.html">Terms</a>
-          <a href="legal/privacy.html">Privacy</a>
-          <a href="legal/shipping.html">Shipping</a>
-          <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-        </nav>
-      </footer>
-
-    </main>
+    </div>
   </div>
 
-  <!-- ====== MOBILE MENU OVERLAY ====== -->
-  <div class="c-menu-overlay" data-menu-overlay aria-hidden="true">
-    <button class="c-menu-overlay__close" data-menu-close aria-label="Close menu">[close]</button>
-    <a href="archive.html" class="c-menu-overlay__link">archive</a>
-    <a href="lookbook.html" class="c-menu-overlay__link">lookbook</a>
-    <a href="story.html" class="c-menu-overlay__link">our story</a>
-    <a href="sound.html" class="c-menu-overlay__link">sound</a>
-    <a href="drop.html" class="c-menu-overlay__link">drop</a>
-    <a href="https://instagram.com/" class="c-menu-overlay__link" target="_blank" rel="noopener" style="font-size: var(--text-lg); opacity: 0.5;">instagram</a>
-  </div>
-
-  <!-- ====== SCRIPTS ====== -->
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-
-  <!-- Snipcart (swap API key for production) -->
-  <div hidden id="snipcart" data-api-key="[YOUR_SNIPCART_PUBLIC_API_KEY]" data-config-modal-style="side">
-    <div data-cart-custom-shipping-fields></div>
-  </div>
-  <script async src="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.js"></script>
-  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css">
-
-  <!-- Site JS -->
-  <script type="module" src="js/main.js"></script>
 </body>
 </html>
