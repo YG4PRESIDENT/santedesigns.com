@@ -675,6 +675,43 @@ small {
 
 
 /* --------------------------------------------------------------------------
+   COMPONENT — Donate grid
+   -------------------------------------------------------------------------- */
+.c-donate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-6);
+  padding: var(--s-8);
+}
+
+.c-donate-card__image {
+  aspect-ratio: 1;
+  background: var(--c-off-white);
+  margin-bottom: var(--s-4);
+}
+
+.c-donate-card__name {
+  font-family: var(--f-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-mono);
+  margin-bottom: var(--s-2);
+}
+
+.c-donate-card__desc {
+  font-size: var(--text-sm);
+  opacity: 0.7;
+  margin-bottom: var(--s-4);
+  max-width: 40ch;
+}
+
+@media (max-width: 480px) {
+  .c-donate-grid { grid-template-columns: 1fr; }
+}
+
+
+/* --------------------------------------------------------------------------
    COMPONENT — Featured section (homepage)
    -------------------------------------------------------------------------- */
 .c-featured {
