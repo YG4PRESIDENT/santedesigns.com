@@ -459,13 +459,13 @@ small {
   top: 0;
   left: 0;
   bottom: 0;
-  width: min(280px, 75vw);
+  width: min(200px, 25vw);
   background: var(--c-black);
   color: var(--c-white);
   z-index: var(--z-overlay);
   display: flex;
   flex-direction: column;
-  padding: var(--s-8) var(--s-6);
+  padding: var(--s-6) var(--s-4);
   transform: translateX(-100%);
   /* transition removed — GSAP animates open/close */
   overflow-y: auto;
@@ -476,13 +476,13 @@ small {
 .c-menu-sidebar__header {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: var(--s-12);
+  margin-bottom: var(--s-6);
 }
 
 .c-menu-sidebar__close {
   color: var(--c-white);
   font-family: var(--f-body);
-  font-size: var(--text-lg);
+  font-size: var(--text-sm);
   padding: var(--s-2);
   min-width: 44px;
   min-height: 44px;
@@ -491,13 +491,13 @@ small {
 .c-menu-sidebar__body {
   display: flex;
   flex-direction: column;
-  gap: var(--s-6);
+  gap: var(--s-3);
   flex: 1;
 }
 
 .c-menu-sidebar__link {
   font-family: var(--f-nav);
-  font-size: var(--text-2xl);
+  font-size: var(--text-base);
   transition: opacity var(--dur-fast);
   padding: var(--s-1) 0;
   min-height: 44px;

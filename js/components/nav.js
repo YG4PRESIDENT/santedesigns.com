@@ -32,9 +32,9 @@ export function initNav() {
   let isOpen = false;
   let menuTl = null;
 
-  // Match CSS: min(280px, 75vw)
+  // Match CSS: min(200px, 25vw)
   function getSidebarWidth() {
-    return Math.min(280, window.innerWidth * 0.75);
+    return Math.min(200, window.innerWidth * 0.25);
   }
 
   // Build a GSAP timeline (paused). A fresh one is created on each open
