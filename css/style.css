@@ -20,9 +20,9 @@
   --c-overlay-light: rgba(0, 0, 0, 0.3);
 
   /* Typography */
-  --f-display: 'UnifrakturCook', cursive;
-  --f-nav: 'Pirata One', cursive;
-  --f-body: 'Inconsolata', monospace;
+  --f-display: 'Cormorant Garamond', serif;
+  --f-nav: 'Cormorant Garamond', serif;
+  --f-body: 'Libre Franklin', sans-serif;
   --f-sans: 'Inter', sans-serif;
 
   --text-xs: clamp(0.625rem, 0.55rem + 0.2vw, 0.75rem);
