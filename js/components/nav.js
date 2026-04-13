@@ -4,6 +4,8 @@
  * sync issues between sidebar slide and content push.
  */
 
+import { prefersReducedMotion } from '../gsap-init.js';
+
 export function initNav() {
   // Desktop: set active nav link based on data-page
   const currentPage = document.body.dataset.page;
@@ -39,11 +41,12 @@ export function initNav() {
   // so it always uses the current viewport width.
   function createTimeline() {
     const width = getSidebarWidth();
+    const instant = prefersReducedMotion();
 
     const tl = gsap.timeline({
       paused: true,
       defaults: {
-        duration: 0.4,
+        duration: instant ? 0 : 0.4,
         ease: 'expo.out',
       },
       onReverseComplete: onCloseComplete,
@@ -72,7 +75,7 @@ export function initNav() {
       tl.fromTo(
         backdrop,
         { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.3 },
+        { autoAlpha: 1, duration: instant ? 0 : 0.3 },
         0
       );
     }
