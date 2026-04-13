@@ -992,9 +992,12 @@ small {
    COMPONENT — Story / manifesto
    -------------------------------------------------------------------------- */
 .c-story {
-  max-width: 700px;
-  margin: 0 auto;
   padding: var(--s-32) var(--s-8);
+}
+
+.c-story__headline,
+.c-story__body {
+  max-width: 700px;
 }
 
 .c-story__headline {
@@ -1175,12 +1178,14 @@ small {
 
 /* Legal page layout */
 .c-legal-page {
-  max-width: 700px;
-  margin: 0 auto;
   padding: var(--s-16) var(--s-8);
   font-family: var(--f-sans);
   font-size: var(--text-sm);
   line-height: var(--leading-relaxed);
+}
+
+.c-legal-page > * {
+  max-width: 700px;
 }
 
 .c-legal-page__title {
