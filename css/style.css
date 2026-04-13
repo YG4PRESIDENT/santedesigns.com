@@ -471,6 +471,7 @@ small {
   flex-direction: column;
   padding: var(--s-8) var(--s-6);
   transform: translateX(-100%);
+  /* transition removed — GSAP animates open/close */
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
@@ -536,12 +537,9 @@ small {
 }
 
 /* Push wrapper — wraps all page content for push animation */
+/* transition/transform removed — GSAP animates open/close in sync with sidebar */
 .site-push-wrapper {
-  transition: transform var(--dur-normal) var(--ease-out);
-}
-
-.site-push-wrapper.is-pushed {
-  transform: translateX(min(280px, 75vw));
+  /* no transition; GSAP owns the transform */
 }
 
 /* Hamburger — keep existing styles */

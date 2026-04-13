@@ -1,6 +1,7 @@
 /**
- * Navigation — left sidebar push menu
- * Slides sidebar from left and pushes page content right
+ * Navigation — left sidebar menu
+ * Uses GSAP for all sidebar/push/backdrop animations to eliminate
+ * sync issues between sidebar slide and content push.
  */
 
 export function initNav() {
@@ -26,8 +27,62 @@ export function initNav() {
   const sidebarLinks = sidebar.querySelectorAll('a');
   let previouslyFocused = null;
   let savedScrollY = 0;
+  let isOpen = false;
+  let menuTl = null;
+
+  // Match CSS: min(280px, 75vw)
+  function getSidebarWidth() {
+    return Math.min(280, window.innerWidth * 0.75);
+  }
+
+  // Build a GSAP timeline (paused). A fresh one is created on each open
+  // so it always uses the current viewport width.
+  function createTimeline() {
+    const width = getSidebarWidth();
+
+    const tl = gsap.timeline({
+      paused: true,
+      defaults: {
+        duration: 0.4,
+        ease: 'expo.out',
+      },
+      onReverseComplete: onCloseComplete,
+    });
+
+    // Sidebar slides in from offscreen-left to x:0
+    tl.fromTo(
+      sidebar,
+      { x: -width },
+      { x: 0 },
+      0
+    );
+
+    // Push wrapper slides right by the sidebar width (in sync)
+    if (pushWrapper) {
+      tl.fromTo(
+        pushWrapper,
+        { x: 0 },
+        { x: width },
+        0
+      );
+    }
+
+    // Backdrop fades in
+    if (backdrop) {
+      tl.fromTo(
+        backdrop,
+        { autoAlpha: 0 },
+        { autoAlpha: 1, duration: 0.3 },
+        0
+      );
+    }
+
+    return tl;
+  }
 
   function openMenu() {
+    if (isOpen) return;
+    isOpen = true;
     previouslyFocused = document.activeElement;
 
     // iOS scroll lock
@@ -36,25 +91,20 @@ export function initNav() {
     document.body.style.width = '100%';
     document.body.style.top = `-${savedScrollY}px`;
 
+    // Aria / visual state
     hamburger.classList.add('is-open');
     hamburger.setAttribute('aria-expanded', 'true');
     sidebar.setAttribute('aria-hidden', 'false');
 
-    // Animate sidebar in
-    sidebar.style.transform = 'translateX(0)';
-    sidebar.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-
-    // Push content right
-    if (pushWrapper) {
-      pushWrapper.classList.add('is-pushed');
-    }
-
-    // Show backdrop
     if (backdrop) {
-      backdrop.classList.add('is-open');
+      backdrop.style.pointerEvents = 'auto';
     }
 
-    // Focus close button
+    // Create fresh timeline and play forward
+    menuTl = createTimeline();
+    menuTl.play();
+
+    // Focus close button after animation starts
     if (closeBtn) {
       setTimeout(() => closeBtn.focus(), 100);
     }
@@ -63,34 +113,47 @@ export function initNav() {
   }
 
   function closeMenu() {
-    // Restore scroll position
+    if (!isOpen) return;
+    isOpen = false;
+
+    // Aria / visual state
+    hamburger.classList.remove('is-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    sidebar.setAttribute('aria-hidden', 'true');
+
+    if (backdrop) {
+      backdrop.style.pointerEvents = 'none';
+    }
+
+    document.removeEventListener('keydown', handleKeydown);
+
+    // Reverse the timeline — everything animates back in lockstep
+    if (menuTl) {
+      menuTl.reverse();
+    } else {
+      // Safety fallback
+      onCloseComplete();
+    }
+  }
+
+  // Called when the reverse animation completes
+  function onCloseComplete() {
+    // Restore scroll position (iOS scroll lock cleanup)
     document.body.style.position = '';
     document.body.style.width = '';
     document.body.style.top = '';
     window.scrollTo(0, savedScrollY);
 
-    hamburger.classList.remove('is-open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    sidebar.setAttribute('aria-hidden', 'true');
-
-    // Slide sidebar back
-    sidebar.style.transform = 'translateX(-100%)';
-
-    // Pull content back
-    if (pushWrapper) {
-      pushWrapper.classList.remove('is-pushed');
-    }
-
-    // Hide backdrop
-    if (backdrop) {
-      backdrop.classList.remove('is-open');
-    }
-
-    document.removeEventListener('keydown', handleKeydown);
+    // Clear all GSAP inline styles so CSS owns the elements again
+    gsap.set(sidebar, { clearProps: 'all' });
+    if (pushWrapper) gsap.set(pushWrapper, { clearProps: 'all' });
+    if (backdrop) gsap.set(backdrop, { clearProps: 'all' });
 
     if (previouslyFocused) {
       previouslyFocused.focus();
     }
+
+    menuTl = null;
   }
 
   function handleKeydown(e) {
@@ -118,11 +181,9 @@ export function initNav() {
     }
   }
 
-  // Hamburger toggle
+  // Hamburger toggle — explicit boolean, no DOM-state guessing
   hamburger.addEventListener('click', () => {
-    const isOpen = !sidebar.getAttribute('aria-hidden') || sidebar.getAttribute('aria-hidden') === 'false';
-    // Check by looking at the push wrapper state
-    if (pushWrapper && pushWrapper.classList.contains('is-pushed')) {
+    if (isOpen) {
       closeMenu();
     } else {
       openMenu();
