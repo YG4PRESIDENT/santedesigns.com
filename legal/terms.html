@@ -12,6 +12,7 @@
 </head>
 <body data-page="">
 
+  <div class="site-push-wrapper">
   <!-- TOP NAV BAR -->
   <header class="site-topnav">
     <a href="./" class="site-topnav__logo">SANTE</a>
@@ -61,17 +62,26 @@
       </footer>
     </main>
   </div>
-
-  <div class="c-menu-overlay" data-menu-overlay aria-hidden="true">
-    <button class="c-menu-overlay__close" data-menu-close aria-label="Close menu">[close]</button>
-    <a href="./" class="c-menu-overlay__link">home</a>
-    <a href="archive.html" class="c-menu-overlay__link">shop</a>
-    <a href="lookbook.html" class="c-menu-overlay__link">lookbook</a>
-    <a href="story.html" class="c-menu-overlay__link">our story</a>
-    <a href="sound.html" class="c-menu-overlay__link">sound</a>
-    <a href="drop.html" class="c-menu-overlay__link">drop</a>
-    <a href="https://instagram.com/" class="c-menu-overlay__link" target="_blank" rel="noopener" style="font-size: var(--text-lg); opacity: 0.5;">instagram</a>
   </div>
+
+  <!-- MENU BACKDROP -->
+  <div class="c-menu-backdrop" data-menu-backdrop aria-hidden="true"></div>
+
+  <!-- MENU SIDEBAR -->
+  <nav class="c-menu-sidebar" data-menu-overlay role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true">
+    <div class="c-menu-sidebar__header">
+      <button class="c-menu-sidebar__close" data-menu-close aria-label="Close menu">[close]</button>
+    </div>
+    <div class="c-menu-sidebar__body">
+      <a href="./" class="c-menu-sidebar__link">home</a>
+      <a href="archive.html" class="c-menu-sidebar__link">shop</a>
+      <a href="lookbook.html" class="c-menu-sidebar__link">lookbook</a>
+      <a href="story.html" class="c-menu-sidebar__link">our story</a>
+    </div>
+    <div class="c-menu-sidebar__footer">
+      <a href="https://instagram.com/" class="c-menu-sidebar__social" target="_blank" rel="noopener">instagram</a>
+    </div>
+  </nav>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
