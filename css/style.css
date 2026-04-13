@@ -1115,6 +1115,21 @@ small {
   opacity: 1;
 }
 
+.c-footer__instagram {
+  opacity: 0.5;
+  transition: opacity var(--dur-fast);
+  padding: var(--s-2);
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-footer__instagram:hover {
+  opacity: 1;
+}
+
 
 /* --------------------------------------------------------------------------
    COMPONENT — Snipcart overrides
