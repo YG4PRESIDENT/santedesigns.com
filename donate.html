@@ -4,17 +4,19 @@
   <meta charset="UTF-8">
   <base href="/santedesigns.com/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SANTE DESIGNS | Our Story</title>
+  <title>SANTE DESIGNS | Donate</title>
+  <meta name="description" content="Supporting mental health organizations that matter.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Inter:wght@400;500&family=Pirata+One&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://cdn.snipcart.com">
 </head>
-<body data-page="story">
+<body data-page="donate">
 
   <!-- TOP NAV BAR -->
   <header class="site-topnav">
-    <a href="./" class="site-topnav__logo">Santé</a>
+    <a href="./" class="site-topnav__logo">Sant&#233;</a>
     <div class="site-topnav__actions">
       <button class="c-nav__cart-btn snipcart-checkout" aria-label="Open cart">
         cart <span class="c-nav__cart-count snipcart-items-count">0</span>
@@ -27,24 +29,46 @@
 
   <div class="site-shell">
 
+    <!-- MAIN -->
     <main class="site-main">
-      <div class="c-story" data-animate="fade-up">
-        <h1 class="c-story__headline">[LORE MANIFESTO HEADLINE]</h1>
-        <div class="c-story__body">
-          <p>[LORE MANIFESTO — The actual soul and philosophy behind this project. This is Sante's declaration of intent, written in his voice. 3-4 sentences that read like a diary entry, not marketing copy.]</p>
-          <p>[CONTINUATION — The deeper story. Where this came from. What drives the work. What it means to make things by hand in a world that mass-produces everything.]</p>
-          <p>[THE VISION — Where this is going. What the next chapter looks like. Not a business plan, but a creative direction.]</p>
+      <div style="padding: var(--s-8);">
+        <p class="c-featured__label">give back</p>
+        <h2 style="font-family: var(--f-display); font-size: var(--text-3xl); margin-bottom: var(--s-6);">[Donate]</h2>
+        <p style="opacity: 0.7; max-width: 50ch; margin-bottom: var(--s-12);">[Supporting mental health organizations that matter.]</p>
+      </div>
+
+      <div class="c-donate-grid">
+        <div class="c-donate-card" data-animate="fade-up">
+          <div class="c-donate-card__image placeholder">[ORG LOGO]</div>
+          <div class="c-donate-card__info">
+            <p class="c-donate-card__name">[Organization Name]</p>
+            <p class="c-donate-card__desc">[Brief description]</p>
+            <a href="#" class="c-btn c-btn--outline">Donate</a>
+          </div>
         </div>
-      </div>
-
-      <!-- Editorial image break -->
-      <div class="c-lookbook__item c-lookbook__item--full" data-animate="fade-up">
-        <div class="placeholder" style="width:100%;height:80vh;">[EDITORIAL IMAGE — SANTE AT WORK / IN CONTEXT]</div>
-      </div>
-
-      <div class="c-story" data-animate="fade-up">
-        <div class="c-story__body">
-          <p>[ADDITIONAL STORY CONTENT — Origin, influences, process. Written vulnerably, not corporately.]</p>
+        <div class="c-donate-card" data-animate="fade-up">
+          <div class="c-donate-card__image placeholder">[ORG LOGO]</div>
+          <div class="c-donate-card__info">
+            <p class="c-donate-card__name">[Organization Name]</p>
+            <p class="c-donate-card__desc">[Brief description]</p>
+            <a href="#" class="c-btn c-btn--outline">Donate</a>
+          </div>
+        </div>
+        <div class="c-donate-card" data-animate="fade-up">
+          <div class="c-donate-card__image placeholder">[ORG LOGO]</div>
+          <div class="c-donate-card__info">
+            <p class="c-donate-card__name">[Organization Name]</p>
+            <p class="c-donate-card__desc">[Brief description]</p>
+            <a href="#" class="c-btn c-btn--outline">Donate</a>
+          </div>
+        </div>
+        <div class="c-donate-card" data-animate="fade-up">
+          <div class="c-donate-card__image placeholder">[ORG LOGO]</div>
+          <div class="c-donate-card__info">
+            <p class="c-donate-card__name">[Organization Name]</p>
+            <p class="c-donate-card__desc">[Brief description]</p>
+            <a href="#" class="c-btn c-btn--outline">Donate</a>
+          </div>
         </div>
       </div>
 
@@ -54,18 +78,13 @@
           <a href="legal/terms.html">Terms</a>
           <a href="legal/privacy.html">Privacy</a>
           <a href="legal/shipping.html">Shipping</a>
-          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="c-footer__instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <circle cx="12" cy="12" r="5"/>
-              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
-            </svg>
-          </a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
         </nav>
       </footer>
     </main>
   </div>
 
+  <!-- MENU OVERLAY -->
   <div class="c-menu-overlay" data-menu-overlay aria-hidden="true">
     <button class="c-menu-overlay__close" data-menu-close aria-label="Close menu">[close]</button>
     <a href="./" class="c-menu-overlay__link">home</a>
