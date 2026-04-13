@@ -20,6 +20,7 @@
   --c-overlay-light: rgba(0, 0, 0, 0.3);
 
   /* Typography */
+  --f-logo: Impact, 'Arial Black', sans-serif;
   --f-display: 'UnifrakturCook', cursive;
   --f-nav: 'Pirata One', cursive;
   --f-body: 'Inconsolata', monospace;
@@ -211,8 +212,11 @@ small {
 }
 
 .c-portal__logo {
-  font-family: var(--f-display);
+  font-family: var(--f-logo);
   font-size: var(--text-3xl);
+  font-weight: 400;
+  font-style: normal;
+  opacity: 1;
   margin-bottom: var(--s-4);
 }
 
@@ -312,8 +316,11 @@ small {
 }
 
 .site-topnav__logo {
-  font-family: var(--f-display);
+  font-family: var(--f-logo);
   font-size: var(--text-2xl);
+  font-weight: 400;
+  font-style: normal;
+  opacity: 1;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
