@@ -652,31 +652,16 @@ small {
    -------------------------------------------------------------------------- */
 .c-product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--s-6);
-  padding: var(--s-8);
-}
-
-/* Asymmetric: let certain cards span 2 columns */
-.c-product-grid .c-product-card:nth-child(4n + 1) {
-  grid-column: span 2;
-}
-
-@media (max-width: 1024px) {
-  .c-product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--s-4);
-    padding: var(--s-4);
-  }
-
-  .c-product-grid .c-product-card:nth-child(4n + 1) {
-    grid-column: span 1;
-  }
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-4);
+  padding: var(--s-4);
 }
 
 @media (max-width: 480px) {
   .c-product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--s-3);
+    padding: var(--s-3);
   }
 }
 
