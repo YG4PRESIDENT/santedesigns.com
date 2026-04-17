@@ -24,10 +24,10 @@
   <!-- ====== PORTAL — Full-screen gateway ====== -->
   <div class="c-portal">
     <video class="c-portal__bg"
-           autoplay muted loop playsinline
+           autoplay muted loop playsinline webkit-playsinline
            preload="auto"
-           poster="assets/video/hero-poster.jpg">
-      <source src="assets/video/hero.mp4" type="video/mp4">
+           poster="assets/video/hero-poster.jpg"
+           src="assets/video/hero.mp4">
     </video>
 
     <div class="c-portal__content">
@@ -53,11 +53,26 @@
   </div>
 
   <script>
-    // Force autoplay on iOS Safari — catches cases where the browser hesitates
-    document.addEventListener('DOMContentLoaded', function() {
+    (function() {
       var v = document.querySelector('.c-portal__bg');
-      if (v) v.play().catch(function() {});
-    });
+      if (!v) return;
+
+      function tryPlay() {
+        v.muted = true;
+        v.play().catch(function() {});
+      }
+
+      // Try on every loading milestone
+      v.addEventListener('loadeddata', tryPlay);
+      v.addEventListener('canplay', tryPlay);
+      document.addEventListener('DOMContentLoaded', tryPlay);
+
+      // Last resort: if Low Power Mode blocks autoplay,
+      // start the video on the first touch anywhere on the page
+      document.addEventListener('touchstart', function() {
+        tryPlay();
+      }, { once: true });
+    })();
   </script>
 </body>
 </html>
