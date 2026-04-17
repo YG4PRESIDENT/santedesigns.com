@@ -1169,7 +1169,7 @@ small {
 }
 
 .c-story__body p + p {
-  margin-top: var(--s-6);
+  margin-top: var(--s-4);
 }
 
 
