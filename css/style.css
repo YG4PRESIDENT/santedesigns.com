@@ -1148,7 +1148,7 @@ small {
    COMPONENT — Story / manifesto
    -------------------------------------------------------------------------- */
 .c-story {
-  padding: var(--s-32) var(--s-8);
+  padding: var(--s-12) var(--s-8);
 }
 
 .c-story__headline,
@@ -1159,7 +1159,7 @@ small {
 .c-story__headline {
   font-family: var(--f-display);
   font-size: var(--text-hero);
-  margin-bottom: var(--s-16);
+  margin-bottom: var(--s-8);
 }
 
 .c-story__body {
