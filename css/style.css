@@ -1430,6 +1430,14 @@ small {
   transform: translateY(30px);
 }
 
+/* Fallback: if GSAP hasn't revealed elements after 3s, show them */
+@keyframes gsap-fallback {
+  to { opacity: 1; transform: none; }
+}
+[data-animate] {
+  animation: gsap-fallback 0s 3s forwards;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
