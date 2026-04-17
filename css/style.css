@@ -197,6 +197,17 @@ small {
   pointer-events: none;
 }
 
+/* Hide iOS Safari default video controls / play button */
+.c-portal__bg::-webkit-media-controls {
+  display: none !important;
+}
+.c-portal__bg::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+.c-portal__bg::-webkit-media-controls-panel {
+  display: none !important;
+}
+
 .c-portal__content {
   position: relative;
   z-index: var(--z-base);

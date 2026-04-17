@@ -52,5 +52,12 @@
     </div>
   </div>
 
+  <script>
+    // Force autoplay on iOS Safari — catches cases where the browser hesitates
+    document.addEventListener('DOMContentLoaded', function() {
+      var v = document.querySelector('.c-portal__bg');
+      if (v) v.play().catch(function() {});
+    });
+  </script>
 </body>
 </html>
