@@ -37,7 +37,7 @@
            data-drop-gate="5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
            role="dialog"
            aria-label="Enter password to access drop">
-        <h1 class="c-drop-gate__title">[DROP NAME]</h1>
+        <h1 class="c-drop-gate__title">—</h1>
         <p style="font-size: var(--text-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; opacity: 0.5;">enter password</p>
         <input type="password" class="c-drop-gate__input" placeholder="..." autocomplete="off" autofocus>
         <p class="c-drop-gate__error">wrong password</p>
@@ -46,7 +46,7 @@
       <!-- CONTENT (revealed after password) -->
       <div style="padding: var(--s-16) var(--s-8);">
         <div data-animate="fade-up" style="text-align: center; margin-bottom: var(--s-16);">
-          <h2 style="font-family: var(--f-display); font-size: var(--text-hero);">[DROP NAME]</h2>
+          <h2 style="font-family: var(--f-display); font-size: var(--text-hero);">—</h2>
           <!-- Countdown timer -->
           <div class="c-countdown" style="justify-content: center; margin-top: var(--s-8);" data-countdown-target="2026-04-15T00:00:00">
             <div class="c-countdown__unit">
@@ -71,19 +71,19 @@
         <!-- Drop product -->
         <div class="c-product-page" data-animate="fade-up">
           <div class="c-product-page__gallery">
-            <div class="placeholder" style="width:100%;height:100%;">[DROP PRODUCT IMAGE]</div>
+            <div class="placeholder" style="width:100%;height:100%;"></div>
           </div>
           <div class="c-product-page__details">
-            <h3 class="c-product-page__title">[Drop Product Name]</h3>
-            <p class="c-product-page__price">$[PRICE]</p>
-            <p class="c-product-page__description">[DROP PRODUCT DESCRIPTION]</p>
+            <h3 class="c-product-page__title">—</h3>
+            <p class="c-product-page__price">—</p>
+            <p class="c-product-page__description"></p>
             <button
               class="c-btn c-btn--full snipcart-add-item"
-              data-item-id="[DROP-PRODUCT-HANDLE]"
-              data-item-name="[Drop Product Name]"
-              data-item-price="[PRICE]"
+              data-item-id="drop-product"
+              data-item-name="—"
+              data-item-price="0"
               data-item-url="/drop.html"
-              data-item-description="[Short description]"
+              data-item-description=""
               data-item-custom1-name="Size"
               data-item-custom1-options="S|M|L|XL"
             >
@@ -101,7 +101,7 @@
         <nav class="c-footer__links" aria-label="Footer navigation">
           <a href="legal/terms.html">Terms</a>
           <a href="legal/privacy.html">Privacy</a>
-          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="c-footer__instagram">
+          <a href="https://instagram.com/santedesigns" target="_blank" rel="noopener" aria-label="Instagram" class="c-footer__instagram">
             <img src="assets/img/instagram.svg" width="20" height="20" alt="Instagram">
           </a>
         </nav>
@@ -127,13 +127,13 @@
       <a href="donate.html" class="c-menu-sidebar__link">donate</a>
     </div>
     <div class="c-menu-sidebar__footer">
-      <a href="https://instagram.com/" class="c-menu-sidebar__social" target="_blank" rel="noopener">instagram</a>
+      <a href="https://instagram.com/santedesigns" class="c-menu-sidebar__social" target="_blank" rel="noopener">instagram</a>
     </div>
   </nav>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-  <div hidden id="snipcart" data-api-key="[YOUR_SNIPCART_PUBLIC_API_KEY]" data-config-modal-style="side"></div>
+  <div hidden id="snipcart" data-api-key="" data-config-modal-style="side"></div>
   <script async src="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.js"></script>
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css">
   <script type="module" src="js/main.js"></script>
