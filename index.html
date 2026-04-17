@@ -13,6 +13,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Inter:wght@400;500&family=Pirata+One&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
 
+  <!-- Preload hero video for instant playback -->
+  <link rel="preload" href="assets/video/hero.mp4" as="video" type="video/mp4">
+
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -20,8 +23,12 @@
 
   <!-- ====== PORTAL — Full-screen gateway ====== -->
   <div class="c-portal">
-    <!-- Background image/video — replace with Sante's centerpiece visual -->
-    <div class="c-portal__bg placeholder" style="opacity: 0.4;">[CENTERPIECE VISUAL FROM SURVEY]</div>
+    <video class="c-portal__bg"
+           autoplay muted loop playsinline
+           preload="auto"
+           poster="assets/video/hero-poster.jpg">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
 
     <div class="c-portal__content">
       <!-- Logo -->

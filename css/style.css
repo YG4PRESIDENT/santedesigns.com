@@ -182,7 +182,7 @@ small {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--c-white);
+  background: var(--c-black);
   padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
 }
 
@@ -192,8 +192,9 @@ small {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5;
+  opacity: 0.4;
   z-index: 0;
+  pointer-events: none;
 }
 
 .c-portal__content {
@@ -203,7 +204,7 @@ small {
   flex-direction: column;
   align-items: center;
   gap: var(--s-6);
-  color: var(--c-black);
+  color: var(--c-white);
   text-align: center;
   padding: var(--s-6);
   max-height: 100%;
@@ -239,7 +240,7 @@ small {
 .c-portal__link {
   font-family: var(--f-nav);
   font-size: var(--text-2xl);
-  color: var(--c-black);
+  color: var(--c-white);
   transition: opacity var(--dur-fast) var(--ease-out);
   padding: var(--s-2) var(--s-4);
   min-height: 44px;
@@ -260,7 +261,7 @@ small {
 }
 
 .c-portal__social a {
-  color: var(--c-black);
+  color: var(--c-white);
   opacity: 0.6;
   transition: opacity var(--dur-fast);
   padding: var(--s-3);
