@@ -534,6 +534,26 @@ small {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.c-menu-sidebar__cart {
+  font-family: var(--f-body);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  opacity: 0.5;
+  transition: opacity var(--dur-fast);
+  padding: var(--s-3) 0;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--c-white);
+  margin-bottom: var(--s-2);
+}
+
+.c-menu-sidebar__cart:hover {
+  opacity: 1;
+}
+
 .c-menu-sidebar__social {
   font-family: var(--f-body);
   font-size: var(--text-xs);
